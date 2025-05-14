@@ -1,0 +1,221 @@
+<script lang="ts">
+    import { ModeWatcher, setMode, mode } from "mode-watcher";
+    import { CssVarMap } from "./lib/shared/utils/css-map.svelte";
+    import Theme from "./lib/shared/theme/";
+    import { UseColorScheme } from "./lib/hooks/useColorScheme.svelte";
+    import { MoonIcon } from "@lucide/svelte";
+    import { SunIcon } from "@lucide/svelte";
+    import { ICON_SIZE } from "./lib/shared/constants";
+    import Button from "./lib/components/ui/button/button.svelte";
+
+    let theme = $state(
+        CssVarMap.fromObject(Theme[mode.current as keyof typeof Theme]),
+    );
+
+    UseColorScheme.setCtx(() => theme);
+</script>
+
+<ModeWatcher />
+<main>
+    <button
+        onclick={() => {
+            if (mode.current === "dark") {
+                setMode("light");
+                theme = CssVarMap.fromObject(Theme.light);
+            } else {
+                setMode("dark");
+                theme = CssVarMap.fromObject(Theme.dark);
+            }
+        }}
+    >
+        {#if mode.current === "dark"}
+            <MoonIcon size={ICON_SIZE} />
+        {:else}
+            <SunIcon size={ICON_SIZE} />
+        {/if}
+    </button>
+
+    <div class="flex px-20 flex-col gap-10">
+        <div class="flex flex-col gap-2.5">
+            <span>elevated</span>
+            <div class="flex flex-col gap-2.5">
+                <div>
+                    <Button variant="elevated" color="primary">primary</Button>
+                    <Button variant="elevated" color="secondary"
+                        >secondary</Button
+                    >
+                    <Button variant="elevated" color="tertiary">tertiary</Button
+                    >
+                    <Button variant="elevated" color="error">error</Button>
+                </div>
+                <div>
+                    <Button variant="elevated" size="icon">
+                        <SunIcon />
+                    </Button>
+                    <Button variant="elevated" size="xs">extra small</Button>
+                    <Button variant="elevated" size="sm">small</Button>
+                    <Button variant="elevated" size="md">medium</Button>
+                    <Button variant="elevated" size="lg">large</Button>
+                    <Button variant="elevated" size="xl">extra large</Button>
+                    <Button variant="elevated" size="xxl"
+                        >extra extra large</Button
+                    >
+                </div>
+                <div>
+                    <Button variant="elevated" radius="none" size="xl"
+                        >none</Button
+                    >
+                    <Button variant="elevated" radius="xs" size="xl"
+                        >extra small</Button
+                    >
+                    <Button variant="elevated" radius="sm" size="xl"
+                        >small</Button
+                    >
+                    <Button variant="elevated" radius="md" size="xl"
+                        >medium</Button
+                    >
+                    <Button variant="elevated" radius="lg" size="xl"
+                        >large</Button
+                    >
+                    <Button variant="elevated" radius="xl" size="xl"
+                        >extra large</Button
+                    >
+                    <Button variant="elevated" radius="xxl" size="xxl"
+                        >extra extra large</Button
+                    >
+                    <Button variant="elevated" radius="full" size="xxl"
+                        >full</Button
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2.5">
+            <span>filled</span>
+            <div class="flex flex-col gap-2.5">
+                <div>
+                    <Button color="primary">primary</Button>
+                    <Button color="secondary">secondary</Button>
+                    <Button color="tertiary">tertiary</Button>
+                    <Button color="error">error</Button>
+                </div>
+                <div>
+                    <Button size="icon">
+                        <SunIcon />
+                    </Button>
+                    <Button size="xs">extra small</Button>
+                    <Button size="sm">small</Button>
+                    <Button size="md">medium</Button>
+                    <Button size="lg">large</Button>
+                    <Button size="xl">extra large</Button>
+                    <Button size="xxl">extra extra large</Button>
+                </div>
+                <div>
+                    <Button radius="none" size="xl">none</Button>
+                    <Button radius="xs" size="xl">extra small</Button>
+                    <Button radius="sm" size="xl">small</Button>
+                    <Button radius="md" size="xl">medium</Button>
+                    <Button radius="lg" size="xl">large</Button>
+                    <Button radius="xl" size="xl">extra large</Button>
+                    <Button radius="xxl" size="xxl">extra extra large</Button>
+                    <Button radius="full" size="xxl">full</Button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2.5">
+            <span>tonal</span>
+            <div class="flex flex-col gap-2.5">
+                <div>
+                    <Button variant="tonal" color="primary">primary</Button>
+                    <Button variant="tonal" color="secondary">secondary</Button>
+                    <Button variant="tonal" color="tertiary">tertiary</Button>
+                    <Button variant="tonal" color="error">error</Button>
+                </div>
+                <div>
+                    <Button variant="tonal" size="icon">
+                        <SunIcon />
+                    </Button>
+                    <Button variant="tonal" size="xs">extra small</Button>
+                    <Button variant="tonal" size="sm">small</Button>
+                    <Button variant="tonal" size="md">medium</Button>
+                    <Button variant="tonal" size="lg">large</Button>
+                    <Button variant="tonal" size="xl">extra large</Button>
+                    <Button variant="tonal" size="xxl">extra extra large</Button>
+                </div>
+                <div>
+                    <Button variant="tonal" radius="none" size="xl">none</Button>
+                    <Button variant="tonal" radius="xs" size="xl">extra small</Button>
+                    <Button variant="tonal" radius="sm" size="xl">small</Button>
+                    <Button variant="tonal" radius="md" size="xl">medium</Button>
+                    <Button variant="tonal" radius="lg" size="xl">large</Button>
+                    <Button variant="tonal" radius="xl" size="xl">extra large</Button>
+                    <Button variant="tonal" radius="xxl" size="xxl">extra extra large</Button>
+                    <Button variant="tonal" radius="full" size="xxl">full</Button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2.5">
+            <span>outlined</span>
+            <div class="flex flex-col gap-2.5">
+                <div>
+                    <Button variant="outlined" color="primary">primary</Button>
+                    <Button variant="outlined" color="secondary">secondary</Button>
+                    <Button variant="outlined" color="tertiary">tertiary</Button>
+                    <Button variant="outlined" color="error">error</Button>
+                </div>
+                <div>
+                    <Button variant="outlined" size="icon">
+                        <SunIcon />
+                    </Button>
+                    <Button variant="outlined" size="xs">extra small</Button>
+                    <Button variant="outlined" size="sm">small</Button>
+                    <Button variant="outlined" size="md">medium</Button>
+                    <Button variant="outlined" size="lg">large</Button>
+                    <Button variant="outlined" size="xl">extra large</Button>
+                    <Button variant="outlined" size="xxl">extra extra large</Button>
+                </div>
+                <div>
+                    <Button variant="outlined" radius="none" size="xl">none</Button>
+                    <Button variant="outlined" radius="xs" size="xl">extra small</Button>
+                    <Button variant="outlined" radius="sm" size="xl">small</Button>
+                    <Button variant="outlined" radius="md" size="xl">medium</Button>
+                    <Button variant="outlined" radius="lg" size="xl">large</Button>
+                    <Button variant="outlined" radius="xl" size="xl">extra large</Button>
+                    <Button variant="outlined" radius="xxl" size="xxl">extra extra large</Button>
+                    <Button variant="outlined" radius="full" size="xxl">full</Button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2.5">
+            <span>text</span>
+            <div class="flex flex-col gap-2.5">
+                <div>
+                    <Button variant="text" color="primary">primary</Button>
+                    <Button variant="text" color="secondary">secondary</Button>
+                    <Button variant="text" color="tertiary">tertiary</Button>
+                    <Button variant="text" color="error">error</Button>
+                </div>
+                <div>
+                    <Button variant="text" size="icon">
+                        <SunIcon />
+                    </Button>
+                    <Button variant="text" size="xs">extra small</Button>
+                    <Button variant="text" size="sm">small</Button>
+                    <Button variant="text" size="md">medium</Button>
+                    <Button variant="text" size="lg">large</Button>
+                    <Button variant="text" size="xl">extra large</Button>
+                    <Button variant="text" size="xxl">extra extra large</Button>
+                </div>
+                <div>
+                    <Button variant="text" radius="none" size="xl">none</Button>
+                    <Button variant="text" radius="xs" size="xl">extra small</Button>
+                    <Button variant="text" radius="sm" size="xl">small</Button>
+                    <Button variant="text" radius="md" size="xl">medium</Button>
+                    <Button variant="text" radius="lg" size="xl">large</Button>
+                    <Button variant="text" radius="xl" size="xl">extra large</Button>
+                    <Button variant="text" radius="xxl" size="xxl">extra extra large</Button>
+                    <Button variant="text" radius="full" size="xxl">full</Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
