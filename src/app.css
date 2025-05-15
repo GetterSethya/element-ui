@@ -58,6 +58,23 @@
     --color-custom-color-on-color-container: var(--custom-color-on-color-container);
 }
 
+@theme {
+    --animate-dot_pulse: dot_pulse 1s infinite;
+
+    @keyframes dot_pulse {
+        0%,
+        100% {
+            opacity: 0.5;
+            scale: 50%;
+        }
+
+        50% {
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+}
+
 @layer base {
     * {
         @apply border-outline/20 outline-outline/20;

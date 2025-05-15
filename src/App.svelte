@@ -7,6 +7,7 @@
     import { SunIcon } from "@lucide/svelte";
     import { ICON_SIZE } from "./lib/shared/constants";
     import ButtonShowcase from "./sections/button-showcase.svelte";
+    import LoadingIndicatorShowcase from "./sections/loading-indicator-showcase.svelte";
 
     let theme = $state(
         CssVarMap.fromObject(Theme[mode.current as keyof typeof Theme]),
@@ -35,4 +36,5 @@
         {/if}
     </button>
     <ButtonShowcase />
+    <LoadingIndicatorShowcase />
 </main>
