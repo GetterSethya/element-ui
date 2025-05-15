@@ -1,4 +1,4 @@
-import { CssVarMap } from "../shared/utils/css-map.svelte";
+import { CssVarMap } from "@lib/shared/utils/css-map.svelte";
 import { getContext, setContext } from "svelte";
 
 export class UseColorScheme {

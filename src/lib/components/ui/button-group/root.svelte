@@ -12,9 +12,9 @@
 
 <script lang="ts">
     import { buttonGroupVariants, type ButtonGroupRootProps } from ".";
-    import { cn } from "../../../shared/utils/classes";
+    import { cn } from "@lib/shared/utils/classes";
     import { getContext, setContext } from "svelte";
-    import type { ButtonVariantProps } from "../button";
+    import type { ButtonVariantProps } from "@ui/button";
 
     let {
         children,

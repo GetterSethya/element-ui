@@ -1,14 +1,14 @@
 <script lang="ts">
     import { ModeWatcher, setMode, mode } from "mode-watcher";
-    import { CssVarMap } from "./lib/shared/utils/css-map.svelte";
-    import Theme from "./lib/shared/theme/";
-    import { UseColorScheme } from "./lib/hooks/useColorScheme.svelte";
+    import { CssVarMap } from "@lib/shared/utils/css-map.svelte";
+    import Theme from "@lib/shared/theme/";
+    import { UseColorScheme } from "@lib/hooks/useColorScheme.svelte";
     import { MoonIcon } from "@lucide/svelte";
     import { SunIcon } from "@lucide/svelte";
-    import { ICON_SIZE } from "./lib/shared/constants";
-    import ButtonShowcase from "./sections/button-showcase.svelte";
-    import LoadingIndicatorShowcase from "./sections/loading-indicator-showcase.svelte";
-    import ButtonGroupShowcase from "./sections/button-group-showcase.svelte";
+    import { ICON_SIZE } from "@lib/shared/constants";
+    import ButtonShowcase from "@/sections/button-showcase.svelte";
+    import LoadingIndicatorShowcase from "@/sections/loading-indicator-showcase.svelte";
+    import ButtonGroupShowcase from "@/sections/button-group-showcase.svelte";
 
     let theme = $state(
         CssVarMap.fromObject(Theme[mode.current as keyof typeof Theme]),

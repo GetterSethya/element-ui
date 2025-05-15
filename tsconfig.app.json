@@ -14,7 +14,13 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "moduleDetection": "force"
-  },
+    "moduleDetection": "force",
+    "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@lib/*": ["src/lib/*"],
+        "@ui/*": ["src/lib/components/ui/*"]
+      },
+    },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }

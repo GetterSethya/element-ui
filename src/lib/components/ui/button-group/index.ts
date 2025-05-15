@@ -1,9 +1,9 @@
 import Root from "./root.svelte";
 import Item from "./item.svelte";
 import { tv, type VariantProps } from "tailwind-variants";
-import type { WithRef } from "../../../shared/types";
+import type { WithRef } from "@lib/shared/types";
 import { Button as ButtonPrimitive } from "bits-ui";
-import Variant from "../button/variant";
+import Variant from "@ui/button/variant";
 
 export const buttonGroupVariants = tv({
   base: "inline-flex transition-all ease-in-out items-center cursor-pointer",

@@ -6,8 +6,8 @@
         ThumbsUpIcon,
         UserIcon,
     } from "@lucide/svelte";
-    import ButtonGroup from "../lib/components/ui/button-group/";
-    import { ICON_SIZE } from "../lib/shared/constants";
+    import ButtonGroup from "@ui/button-group/";
+    import { ICON_SIZE } from "@lib/shared/constants";
 </script>
 
 <div class="flex px-20 flex-col gap-10">

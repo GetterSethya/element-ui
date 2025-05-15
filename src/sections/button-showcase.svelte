@@ -1,9 +1,9 @@
 <script>
     import { MoonIcon, SunIcon } from "@lucide/svelte";
 
-    import Button from "../lib/components/ui/button/button.svelte";
-    import { ICON_SIZE } from "../lib/shared/constants";
-    import LoadingIndicator from "../lib/components/ui/loading-indicator/";
+    import Button from "@ui/button/button.svelte";
+    import { ICON_SIZE } from "@lib/shared/constants";
+    import LoadingIndicator from "@lib/components/ui/loading-indicator/";
 </script>
 
 <div class="flex px-20 flex-col gap-10">

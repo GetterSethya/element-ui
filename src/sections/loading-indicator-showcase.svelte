@@ -1,5 +1,5 @@
 <script lang="ts">
-    import LoadingIndicator from "../lib/components/ui/loading-indicator/";
+    import LoadingIndicator from "@ui/loading-indicator/";
 </script>
 
 <div class="flex px-20 flex-col gap-10">

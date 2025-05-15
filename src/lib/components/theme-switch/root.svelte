@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-    import { UseColorScheme } from "../../hooks/useColorScheme.svelte";
+    import { UseColorScheme } from "@lib/hooks/useColorScheme.svelte";
 
     let {}: ThemeSwitchRootProps = $props();
 

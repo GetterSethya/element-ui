@@ -4,11 +4,11 @@
 >
     import { buttonVariants, type ButtonProps } from ".";
     import { Button as ButtonPrimitive } from "bits-ui";
-    import { cn } from "../../../shared/utils/classes";
+    import { cn } from "@lib/shared/utils/classes";
     import { type ClassNameValue } from "tailwind-merge";
     import { type Component } from "svelte";
-    import ContentRenderer from "../../../shared/utils/content-renderer.svelte";
-    import LoadingIndicator from "../loading-indicator/";
+    import ContentRenderer from "@lib/shared/utils/content-renderer.svelte";
+    import LoadingIndicator from "@ui/loading-indicator/";
 
     let {
         children,
