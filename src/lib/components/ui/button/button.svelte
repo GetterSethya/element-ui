@@ -1,6 +1,6 @@
 <script
     lang="ts"
-    generics="StartContent extends  Component,EndContent extends Component"
+    generics="StartContent extends  Component,EndContent extends Component, LoadingComponent extends Component"
 >
     import { buttonVariants, type ButtonProps } from ".";
     import { Button as ButtonPrimitive } from "bits-ui";
@@ -8,6 +8,7 @@
     import { type ClassNameValue } from "tailwind-merge";
     import { type Component } from "svelte";
     import ContentRenderer from "../../../shared/utils/content-renderer.svelte";
+    import LoadingIndicator from "../loading-indicator/";
 
     let {
         children,
@@ -18,11 +19,12 @@
         radius,
         color,
         isLoading,
+        loadingComponent,
         loadingSide = "start",
         startContent,
         endContent,
         ...rest
-    }: ButtonProps<StartContent, EndContent> = $props();
+    }: ButtonProps<StartContent, EndContent, LoadingComponent> = $props();
 </script>
 
 <ButtonPrimitive.Root
@@ -41,11 +43,17 @@
 >
     <ContentRenderer content={startContent} />
     {#if isLoading && loadingSide === "start"}
-        loading...
+        {@const LoadingComponent = loadingComponent ?? {
+            component: LoadingIndicator.Circular,
+        }}
+        <ContentRenderer content={LoadingComponent} />
     {/if}
     {@render children?.()}
     {#if isLoading && loadingSide === "end"}
-        loading...
+        {@const LoadingComponent = loadingComponent ?? {
+            component: LoadingIndicator.Circular,
+        }}
+        <ContentRenderer content={LoadingComponent} />
     {/if}
     <ContentRenderer content={endContent} />
 </ButtonPrimitive.Root>

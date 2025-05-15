@@ -163,8 +163,10 @@ export const buttonVariants = tv({
 export type ButtonProps<
   StartContent extends Component,
   EndContent extends Component,
+  LoadingComponent extends Component,
 > = ButtonPrimitive.RootProps & {
   loadingSide?: "start" | "end";
+  loadingComponent?: Snippet | TypedComponent<LoadingComponent>;
   startContent?: Snippet | TypedComponent<StartContent>;
   endContent?: Snippet | TypedComponent<EndContent>;
   isLoading?: boolean;

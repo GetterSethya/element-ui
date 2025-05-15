@@ -3,6 +3,7 @@
 
     import Button from "../lib/components/ui/button/button.svelte";
     import { ICON_SIZE } from "../lib/shared/constants";
+    import LoadingIndicator from "../lib/components/ui/loading-indicator/";
 </script>
 
 <div class="flex px-20 flex-col gap-10">
@@ -33,6 +34,151 @@
                     {/snippet}
                     snippet
                 </Button>
+                <Button variant="elevated" color="primary">primary</Button>
+                <Button variant="elevated" color="secondary">secondary</Button>
+                <Button variant="elevated" color="tertiary">tertiary</Button>
+                <Button variant="elevated" color="error">error</Button>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="primary"
+                >
+                    dot
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="secondary"
+                >
+                    dot
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="tertiary"
+                >
+                    dot
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="error"
+                >
+                    dot
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="primary"
+                >
+                    fan
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="secondary"
+                >
+                    fan
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="tertiary"
+                >
+                    fan
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="error"
+                >
+                    fan
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="primary"
+                >
+                    cicular
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="secondary"
+                >
+                    circular
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="tertiary"
+                >
+                    circular
+                </Button>
+                <Button
+                    variant="elevated"
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="error"
+                >
+                    circular
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
                 <Button
                     variant="elevated"
                     loadingSide="start"
@@ -49,10 +195,6 @@
                 >
                     end
                 </Button>
-                <Button variant="elevated" color="primary">primary</Button>
-                <Button variant="elevated" color="secondary">secondary</Button>
-                <Button variant="elevated" color="tertiary">tertiary</Button>
-                <Button variant="elevated" color="error">error</Button>
             </div>
             <div class="flex items-center gap-2.5">
                 <Button variant="elevated" size="icon">
@@ -110,14 +252,142 @@
                     {/snippet}
                     snippet
                 </Button>
-                <Button loadingSide="start" isLoading color="primary">
-                    start
-                </Button>
-                <Button loadingSide="end" isLoading color="primary">end</Button>
                 <Button color="primary">primary</Button>
                 <Button color="secondary">secondary</Button>
                 <Button color="tertiary">tertiary</Button>
                 <Button color="error">error</Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="primary"
+                >
+                    dot
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="secondary"
+                >
+                    dot
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="tertiary"
+                >
+                    dot
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Dot,
+                    }}
+                    color="error"
+                >
+                    dot
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="primary"
+                >
+                    fan
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="secondary"
+                >
+                    fan
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="tertiary"
+                >
+                    fan
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Fan,
+                    }}
+                    color="error"
+                >
+                    fan
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="primary"
+                >
+                    cicular
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="secondary"
+                >
+                    circular
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="tertiary"
+                >
+                    circular
+                </Button>
+                <Button
+                    loadingSide="end"
+                    isLoading
+                    loadingComponent={{
+                        component: LoadingIndicator.Circular,
+                    }}
+                    color="error"
+                >
+                    circular
+                </Button>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <Button loadingSide="start" isLoading color="primary">
+                    start
+                </Button>
+                <Button loadingSide="end" isLoading color="primary">end</Button>
             </div>
             <div class="flex items-center gap-2.5">
                 <Button size="icon">

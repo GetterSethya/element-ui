@@ -15,7 +15,7 @@ export const spinnerVariants = tv({
       spin: "animate-spin",
     },
     color: {
-      default: "text-outline/50",
+      default: "",
       primary: "text-primary",
       secondary: "text-secondary",
       tertiary: "text-tertiary",
