@@ -62,6 +62,7 @@
     --animate-dot_pulse: dot_pulse 1s infinite;
 
     @keyframes dot_pulse {
+
         0%,
         100% {
             opacity: 0.5;
@@ -71,6 +72,22 @@
         50% {
             opacity: 1;
             scale: 100%;
+        }
+    }
+
+    --animate-dot_wave: dot_wave 1s infinite;
+
+    @keyframes dot_wave {
+
+        0%,
+        100% {
+            opacity: 0.5;
+            transform: translateY(2px);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateY(0px);
         }
     }
 }

@@ -69,7 +69,20 @@
     <div class="flex flex-col gap-2.5">
         <span>dot wave</span>
         <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5"></div>
+            <div class="flex items-center gap-2.5">
+                <LoadingIndicator.DotWave size="sm" />
+                <LoadingIndicator.DotWave size="md" />
+                <LoadingIndicator.DotWave size="lg" />
+                <LoadingIndicator.DotWave size="xl" />
+                <LoadingIndicator.DotWave size="xxl" />
+            </div>
+            <div class="flex items-center gap-2.5">
+                <LoadingIndicator.DotWave color="default" />
+                <LoadingIndicator.DotWave color="primary" />
+                <LoadingIndicator.DotWave color="secondary" />
+                <LoadingIndicator.DotWave color="tertiary" />
+                <LoadingIndicator.DotWave color="error" />
+            </div>
         </div>
     </div>
 </div>
