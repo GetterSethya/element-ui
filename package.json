@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@lucide/svelte": "^0.510.0",
+    "@wjfe/n-savant": "^0.2.1",
     "bits-ui": "^1.4.8",
     "clsx": "^2.1.1",
     "mode-watcher": "^1.0.7",
