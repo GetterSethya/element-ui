@@ -26,8 +26,8 @@ export const buttonVariants = tv({
       sm: "h-8 px-2.5",
       md: "h-10 px-2.5",
       lg: "h-12 px-4",
-      xl: "h-16 px-5",
-      xxl: "h-20 px-8",
+      xl: "h-16 px-8",
+      xxl: "h-20 px-10",
     },
     radius: {
       none: "rounded-none",
