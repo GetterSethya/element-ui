@@ -1,5 +1,11 @@
 <script lang="ts">
-    import { MoonIcon, SunIcon, UserIcon } from "@lucide/svelte";
+    import {
+        MoonIcon,
+        SunIcon,
+        ThumbsDownIcon,
+        ThumbsUpIcon,
+        UserIcon,
+    } from "@lucide/svelte";
     import ButtonGroup from "../lib/components/ui/button-group/";
     import { ICON_SIZE } from "../lib/shared/constants";
 </script>
@@ -15,13 +21,10 @@
                     color="primary"
                 >
                     <ButtonGroup.Item>
-                        <SunIcon size={ICON_SIZE} />
+                        <ThumbsUpIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                     <ButtonGroup.Item>
-                        <MoonIcon size={ICON_SIZE} />
-                    </ButtonGroup.Item>
-                    <ButtonGroup.Item>
-                        <UserIcon size={ICON_SIZE} />
+                        <ThumbsDownIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
                 <ButtonGroup.Root
@@ -393,11 +396,7 @@
             </div>
             <span>Text</span>
             <div class="flex items-center gap-2.5">
-                <ButtonGroup.Root
-                    radius="full"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="full" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -408,11 +407,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="xl"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="xl" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -423,11 +418,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="lg"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="lg" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -438,11 +429,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="md"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="md" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -453,11 +440,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="sm"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="sm" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -468,11 +451,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="xs"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="xs" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
@@ -483,11 +462,7 @@
                         <UserIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>
                 </ButtonGroup.Root>
-                <ButtonGroup.Root
-                    radius="none"
-                    variant="text"
-                    color="primary"
-                >
+                <ButtonGroup.Root radius="none" variant="text" color="primary">
                     <ButtonGroup.Item>
                         <SunIcon size={ICON_SIZE} />
                     </ButtonGroup.Item>

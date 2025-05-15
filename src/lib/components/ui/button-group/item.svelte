@@ -5,19 +5,16 @@
     import { ButtonGroupContext } from "./root.svelte";
     import Variant from "../button/variant";
     import { type ClassNameValue } from "tailwind-merge";
-    import { onMount } from "svelte";
 
     let {
         children,
         class: className,
         ref = $bindable(null),
+        size = "md",
         ...rest
     }: ButtonGroupItemProps = $props();
 
     const context = ButtonGroupContext.getCtx();
-    onMount(() => {
-        console.log("mounted");
-    });
 </script>
 
 <ButtonPrimitive.Root
@@ -25,7 +22,7 @@
         buttonGroupItemVariants({
             variant: context().variant,
             color: context().color,
-            size: context().size,
+            size,
             className: className as ClassNameValue,
         }),
         Variant[`${context().variant!}Hover`][context().color!],

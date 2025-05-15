@@ -151,13 +151,13 @@ export const buttonGroupItemVariants = tv({
       error: "",
     },
     size: {
-      icon: "h-10",
+      icon: "h-10 px-2",
       xs: "h-6 px-2 text-xs",
       sm: "h-8 px-2.5",
       md: "h-10 px-2.5",
-      lg: "h-12 px-4",
-      xl: "h-16 px-8",
-      xxl: "h-20 px-10",
+      lg: "h-12 !px-4",
+      xl: "h-16 !px-8",
+      xxl: "h-20 !px-10",
     },
   },
   defaultVariants: {
@@ -287,6 +287,12 @@ export type ButtonGroupRootProps = WithRef<HTMLDivElement> & {
   radius?: ButtonGroupVariantProps["radius"];
   direction?: ButtonGroupVariantProps["direction"];
 };
-export type ButtonGroupItemProps = ButtonPrimitive.RootProps;
+
+export type ButtonGroupItemVariantProps = VariantProps<
+  typeof buttonGroupItemVariants
+>;
+export type ButtonGroupItemProps = ButtonPrimitive.RootProps & {
+  size?: ButtonGroupItemVariantProps["size"];
+};
 
 export default { Root, Item };
