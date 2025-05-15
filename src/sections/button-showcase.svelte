@@ -950,18 +950,18 @@
                     loadingSide="end"
                     isLoading
                     loadingComponent={{
-                        component: LoadingIndicator.Dot
+                        component: LoadingIndicator.Dot,
                     }}
                     color="primary"
                     variant="outlined"
                 >
-                    dot 
+                    dot
                 </Button>
                 <Button
                     loadingSide="end"
                     isLoading
                     loadingComponent={{
-                        component: LoadingIndicator.Dot
+                        component: LoadingIndicator.Dot,
                     }}
                     color="secondary"
                     variant="outlined"
@@ -977,7 +977,7 @@
                     color="tertiary"
                     variant="outlined"
                 >
-                    dot 
+                    dot
                 </Button>
                 <Button
                     loadingSide="end"
@@ -1082,16 +1082,18 @@
             </div>
             <div class="flex items-center gap-2.5">
                 <Button variant="text" radius="none" size="xl">none</Button>
-                <Button variant="text" radius="xs" size="xl">extra small</Button
-                >
+                <Button variant="text" radius="xs" size="xl">
+                    extra small
+                </Button>
                 <Button variant="text" radius="sm" size="xl">small</Button>
                 <Button variant="text" radius="md" size="xl">medium</Button>
                 <Button variant="text" radius="lg" size="xl">large</Button>
-                <Button variant="text" radius="xl" size="xl">extra large</Button
-                >
-                <Button variant="text" radius="xxl" size="xxl"
-                    >extra extra large</Button
-                >
+                <Button variant="text" radius="xl" size="xl">
+                    extra large
+                </Button>
+                <Button variant="text" radius="xxl" size="xxl">
+                    extra extra large
+                </Button>
                 <Button variant="text" radius="full" size="xxl">full</Button>
             </div>
         </div>

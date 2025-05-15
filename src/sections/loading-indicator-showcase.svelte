@@ -23,12 +23,6 @@
         </div>
     </div>
     <div class="flex flex-col gap-2.5">
-        <span>Circular gradient</span>
-        <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5"></div>
-        </div>
-    </div>
-    <div class="flex flex-col gap-2.5">
         <span>Fan</span>
         <div class="flex flex-col gap-2.5">
             <div class="flex items-center gap-2.5">

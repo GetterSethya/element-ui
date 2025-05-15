@@ -2,7 +2,6 @@ import Fan from "./fan.svelte";
 import Dot from "./dot.svelte";
 import DotWave from "./dot-wave.svelte";
 import Circular from "./circular.svelte";
-import CircularGradient from "./circular-gradient.svelte";
 import type { IconProps } from "@lucide/svelte";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { iconSizeSemantic } from "../../../shared/utils/icon";
@@ -36,4 +35,4 @@ export type SpinnerProps = IconProps & {
   size?: (typeof iconSizeSemantic)[number];
 };
 
-export default { Fan, Dot, DotWave, Circular, CircularGradient };
+export default { Fan, Dot, DotWave, Circular };
