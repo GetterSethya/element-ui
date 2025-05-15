@@ -4,7 +4,7 @@ import DotWave from "./dot-wave.svelte";
 import Circular from "./circular.svelte";
 import type { IconProps } from "@lucide/svelte";
 import { tv, type VariantProps } from "tailwind-variants";
-import type { iconSizeSemantic } from "../../../shared/utils/icon";
+import type { iconSizeSemantic } from "../../../shared/utils/semantic";
 
 export const spinnerVariants = tv({
   variants: {

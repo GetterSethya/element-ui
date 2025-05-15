@@ -5,7 +5,7 @@ import type { Component, Snippet } from "svelte";
 import type { TypedComponent } from "../../../shared/types";
 
 export const buttonVariants = tv({
-  base: "inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-md text-sm cursor-pointer ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  base: "inline-flex gap-1 items-center justify-center whitespace-nowrap text-sm cursor-pointer ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
       elevated: "shadow-md/20",
@@ -52,110 +52,110 @@ export const buttonVariants = tv({
     {
       variant: "filled",
       color: "primary",
-      class: Variant.filled.primary,
+      class: [Variant.filled.primary, Variant.filledHover.primary],
     },
     {
       variant: "filled",
       color: "secondary",
-      class: Variant.filled.secondary,
+      class: [Variant.filled.secondary, Variant.filledHover.secondary],
     },
     {
       variant: "filled",
       color: "tertiary",
-      class: Variant.filled.tertiary,
+      class: [Variant.filled.tertiary, Variant.filledHover.tertiary],
     },
     {
       variant: "filled",
       color: "error",
-      class: Variant.filled.error,
+      class: [Variant.filled.error, Variant.filledHover.error],
     },
 
     //elevated
     {
       variant: "elevated",
       color: "primary",
-      class: Variant.elevated.primary,
+      class: [Variant.elevated.primary, Variant.elevatedHover.primary],
     },
     {
       variant: "elevated",
       color: "secondary",
-      class: Variant.elevated.secondary,
+      class: [Variant.elevated.secondary, Variant.elevatedHover.secondary],
     },
     {
       variant: "elevated",
       color: "tertiary",
-      class: Variant.elevated.tertiary,
+      class: [Variant.elevated.tertiary, Variant.elevatedHover.tertiary],
     },
     {
       variant: "elevated",
       color: "error",
-      class: Variant.elevated.error,
+      class: [Variant.elevated.error, Variant.elevatedHover.error],
     },
 
     //tonal
     {
       variant: "tonal",
       color: "primary",
-      class: Variant.tonal.primary,
+      class: [Variant.tonal.primary, Variant.tonalHover.primary],
     },
     {
       variant: "tonal",
       color: "secondary",
-      class: Variant.tonal.secondary,
+      class: [Variant.tonal.secondary, Variant.tonalHover.secondary],
     },
     {
       variant: "tonal",
       color: "tertiary",
-      class: Variant.tonal.tertiary,
+      class: [Variant.tonal.tertiary, Variant.tonalHover.tertiary],
     },
     {
       variant: "tonal",
       color: "error",
-      class: Variant.tonal.error,
+      class: [Variant.tonal.error, Variant.tonalHover.error],
     },
 
     //outlined
     {
       variant: "outlined",
       color: "primary",
-      class: Variant.outlined.primary,
+      class: [Variant.outlined.primary, Variant.outlinedHover.primary],
     },
     {
       variant: "outlined",
       color: "secondary",
-      class: Variant.outlined.secondary,
+      class: [Variant.outlined.secondary, Variant.outlinedHover.secondary],
     },
     {
       variant: "outlined",
       color: "tertiary",
-      class: Variant.outlined.tertiary,
+      class: [Variant.outlined.tertiary, Variant.outlinedHover.tertiary],
     },
     {
       variant: "outlined",
       color: "error",
-      class: Variant.outlined.error,
+      class: [Variant.outlined.error, Variant.outlinedHover.error],
     },
 
     //text
     {
       variant: "text",
       color: "primary",
-      class: Variant.text.primary,
+      class: [Variant.text.primary, Variant.textHover.primary],
     },
     {
       variant: "text",
       color: "secondary",
-      class: Variant.text.secondary,
+      class: [Variant.text.secondary, Variant.textHover.secondary],
     },
     {
       variant: "text",
       color: "tertiary",
-      class: Variant.text.tertiary,
+      class: [Variant.text.tertiary, Variant.textHover.tertiary],
     },
     {
       variant: "text",
       color: "error",
-      class: Variant.text.error,
+      class: [Variant.text.error, Variant.textHover.error],
     },
   ],
 });

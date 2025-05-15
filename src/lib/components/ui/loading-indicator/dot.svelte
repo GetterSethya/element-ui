@@ -2,7 +2,7 @@
     import { spinnerVariants, type SpinnerProps } from ".";
     import { cn } from "../../../shared/utils/classes";
     import { type ClassNameValue } from "tailwind-merge";
-    import { IconSize } from "../../../shared/utils/icon";
+    import { IconSize } from "../../../shared/utils/semantic";
 
     let {
         size = "md",

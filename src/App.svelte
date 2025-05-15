@@ -8,6 +8,7 @@
     import { ICON_SIZE } from "./lib/shared/constants";
     import ButtonShowcase from "./sections/button-showcase.svelte";
     import LoadingIndicatorShowcase from "./sections/loading-indicator-showcase.svelte";
+    import ButtonGroupShowcase from "./sections/button-group-showcase.svelte";
 
     let theme = $state(
         CssVarMap.fromObject(Theme[mode.current as keyof typeof Theme]),
@@ -17,7 +18,7 @@
 </script>
 
 <ModeWatcher />
-<main>
+<main class="p-5">
     <button
         onclick={() => {
             if (mode.current === "dark") {
@@ -37,4 +38,5 @@
     </button>
     <ButtonShowcase />
     <LoadingIndicatorShowcase />
+    <ButtonGroupShowcase />
 </main>

@@ -1,6 +1,6 @@
 import { ICON_SIZE } from "../constants";
 
-export const iconSizeSemantic = ["sm", "md", "lg", "xl","xxl"] as const;
+export const iconSizeSemantic = ["sm", "md", "lg", "xl", "xxl"] as const;
 export class IconSize {
   public static size = ICON_SIZE;
 
@@ -19,6 +19,20 @@ export class IconSize {
 
       default:
         return this.size;
+    }
+  }
+}
+
+export const directionSemantic = ["vertical", "horizontal"] as const;
+export class Direction {
+  public static fromSemantic(semantic: (typeof directionSemantic)[number]) {
+    switch (semantic) {
+      case "horizontal":
+        return "flex-row";
+      case "vertical":
+        return "flex-col";
+      default:
+        return "flex-row";
     }
   }
 }
