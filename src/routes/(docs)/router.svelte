@@ -8,6 +8,8 @@
     import { UseColorScheme } from "@/lib/hooks/useColorScheme.svelte";
     import { CssVarMap } from "@/lib/shared/utils/css-map.svelte";
     import Theme from "@lib/shared/theme/";
+    import { cn } from "@/lib/shared/utils/classes";
+    import { location } from "@wjfe/n-savant/core";
 
     let colorScheme = UseColorScheme.getCtx()();
 
@@ -67,7 +69,11 @@
             <div class="flex flex-col gap-2">
                 {#each sidebarDocsData as s}
                     <Link
-                        class="w-[80%] line-clamp-1 text-sm mx-auto px-2.5 py-2 hover:bg-primary hover:text-on-primary transition-color ease-in-out font-medium rounded-lg"
+                        class={cn(
+                            "w-[80%] line-clamp-1 text-sm mx-auto px-2.5 py-2 hover:bg-primary hover:text-on-primary transition-all ease-in-out font-medium rounded-lg",
+                            location.url.pathname === `/docs/${s.href}` &&
+                                "bg-primary text-on-primary",
+                        )}
                         href={`/docs/${s.href}`}
                     >
                         {s.name}
