@@ -1,9 +1,11 @@
 import { Button as ButtonPrimitive } from "bits-ui";
 import { tv, type VariantProps } from "tailwind-variants";
 import Variant from "./variant";
+import type { Component, Snippet } from "svelte";
+import type { TypedComponent } from "../../../shared/types";
 
 export const buttonVariants = tv({
-  base: "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm cursor-pointer ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  base: "inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-md text-sm cursor-pointer ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
       elevated: "shadow-md/20",
@@ -112,7 +114,6 @@ export const buttonVariants = tv({
       class: Variant.tonal.error,
     },
 
-
     //outlined
     {
       variant: "outlined",
@@ -134,7 +135,6 @@ export const buttonVariants = tv({
       color: "error",
       class: Variant.outlined.error,
     },
-
 
     //text
     {
@@ -160,7 +160,13 @@ export const buttonVariants = tv({
   ],
 });
 
-export type ButtonProps = ButtonPrimitive.RootProps & {
+export type ButtonProps<
+  StartContent extends Component,
+  EndContent extends Component,
+> = ButtonPrimitive.RootProps & {
+  loadingSide?: "start" | "end";
+  startContent?: Snippet | TypedComponent<StartContent>;
+  endContent?: Snippet | TypedComponent<EndContent>;
   isLoading?: boolean;
   variant?: ButtonVariantProps["variant"];
   color?: ButtonVariantProps["color"];

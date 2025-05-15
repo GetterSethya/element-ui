@@ -1,8 +1,13 @@
-<script lang="ts">
+<script
+    lang="ts"
+    generics="StartContent extends  Component,EndContent extends Component"
+>
     import { buttonVariants, type ButtonProps } from ".";
     import { Button as ButtonPrimitive } from "bits-ui";
     import { cn } from "../../../shared/utils/classes";
     import { type ClassNameValue } from "tailwind-merge";
+    import { type Component } from "svelte";
+    import ContentRenderer from "../../../shared/utils/content-renderer.svelte";
 
     let {
         children,
@@ -12,12 +17,17 @@
         size,
         radius,
         color,
+        isLoading,
+        loadingSide = "start",
+        startContent,
+        endContent,
         ...rest
-    }: ButtonProps = $props();
+    }: ButtonProps<StartContent, EndContent> = $props();
 </script>
 
 <ButtonPrimitive.Root
     bind:ref
+    disabled={isLoading || rest.disabled}
     class={cn(
         buttonVariants({
             variant,
@@ -29,5 +39,13 @@
     )}
     {...rest}
 >
+    <ContentRenderer content={startContent} />
+    {#if isLoading && loadingSide === "start"}
+        loading...
+    {/if}
     {@render children?.()}
+    {#if isLoading && loadingSide === "end"}
+        loading...
+    {/if}
+    <ContentRenderer content={endContent} />
 </ButtonPrimitive.Root>
