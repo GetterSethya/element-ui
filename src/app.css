@@ -52,10 +52,6 @@
     --color-surface-container: var(--surface-container);
     --color-surface-container-high: var(--surface-container-high);
     --color-surface-container-highest: var(--surface-container-highest);
-    --color-custom-color-color: var(--custom-color-color);
-    --color-custom-color-on-color: var(--custom-color-on-color);
-    --color-custom-color-color-container: var(--custom-color-color-container);
-    --color-custom-color-on-color-container: var(--custom-color-on-color-container);
 }
 
 @theme {

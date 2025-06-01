@@ -9,10 +9,10 @@ export const buttonGroupVariants = tv({
   base: "inline-flex transition-all ease-in-out items-center cursor-pointer",
   variants: {
     variant: {
-      elevated: "shadow-md/20",
+      elevated: "shadow-md/10",
       filled: "",
       tonal: "",
-      outlined: "outline-2",
+      outlined: "outline-1",
       text: "",
     },
     color: {
@@ -124,12 +124,12 @@ export const buttonGroupVariants = tv({
     {
       variant: "outlined",
       direction: "horizontal",
-      class: "divide-x-2",
+      class: "divide-x-1",
     },
     {
       variant: "outlined",
       direction: "vertical",
-      class: "divide-y-2",
+      class: "divide-y-1",
     },
   ],
 });

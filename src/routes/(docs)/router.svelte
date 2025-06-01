@@ -26,6 +26,10 @@
             name: "Loading Indicator",
             href: "loading_indicator",
         },
+        {
+            name: "Card",
+            href: "card",
+        },
     ];
 
     function handleChangeMode() {

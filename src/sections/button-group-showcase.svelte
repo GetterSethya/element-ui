@@ -603,7 +603,7 @@
                 </ButtonGroup.Root>
             </div>
 
-            <span>Tonal</span>
+            <span>Outlined</span>
             <div class="flex items-center gap-2.5">
                 <ButtonGroup.Root
                     direction="vertical"

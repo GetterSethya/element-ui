@@ -13,7 +13,7 @@
     let {
         children,
         class: className,
-        ref,
+        ref = $bindable(null),
         variant,
         size,
         radius,

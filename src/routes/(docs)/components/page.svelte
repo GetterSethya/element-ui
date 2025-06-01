@@ -6,9 +6,9 @@
 
 <script lang="ts">
     import ButtonGroupShowcase from "@/sections/button-group-showcase.svelte";
-
     import ButtonShowcase from "@/sections/button-showcase.svelte";
     import LoadingIndicatorShowcase from "@/sections/loading-indicator-showcase.svelte";
+    import CardShowcase from "@/sections/card-showcase.svelte";
 
     let { componentName }: ComponentDocsPageProps = $props();
 </script>
@@ -23,4 +23,8 @@
 
 {#if componentName === "loading_indicator"}
     <LoadingIndicatorShowcase />
+{/if}
+
+{#if componentName === "card"}
+    <CardShowcase />
 {/if}
