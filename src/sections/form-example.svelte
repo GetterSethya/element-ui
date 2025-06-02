@@ -65,7 +65,8 @@
         <Card.Header>
             <Card.Title>Create Your Account</Card.Title>
             <Card.Description>
-                Please fill the form bellow to continue
+                Ready to get started? Just fill out the details below to create
+                your new account.
             </Card.Description>
         </Card.Header>
         <form
@@ -88,7 +89,8 @@
                                 Username
                             </Label>
                             <Form.Description>
-                                Your account username
+                                Choose a unique username for your profile. This
+                                will be how others identify you.
                             </Form.Description>
                             <InputGroup
                                 invalid={field.state.meta.errors.length > 0}
@@ -134,7 +136,8 @@
                                 Email
                             </Label>
                             <Form.Description>
-                                This will be use as your recovery email
+                                This email will be used for important
+                                notifications and account recovery.
                             </Form.Description>
                             <InputGroup
                                 invalid={field.state.meta.errors.length > 0}
@@ -181,9 +184,10 @@
                             >
                                 Password
                             </Label>
-                            <Form.Description
-                                >Make sure your password is secure</Form.Description
-                            >
+                            <Form.Description>
+                                Create a strong password to protect your
+                                account.
+                            </Form.Description>
                             <InputGroup
                                 invalid={field.state.meta.errors.length > 0}
                                 startContent={{
@@ -239,7 +243,8 @@
                                 >Confirm Password</Label
                             >
                             <Form.Description>
-                                Confirm your password
+                                Please re-enter your password to confirm it
+                                matches.
                             </Form.Description>
                             <InputGroup
                                 invalid={field.state.meta.errors.length > 0}
