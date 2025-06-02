@@ -4,6 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { WithRef } from "@lib/shared/types";
 import { Button as ButtonPrimitive } from "bits-ui";
 import Variant from "@ui/button/variant";
+import type { Snippet } from "svelte";
 
 export const buttonGroupVariants = tv({
   base: "inline-flex transition-all ease-in-out items-center cursor-pointer",
@@ -281,11 +282,21 @@ export const buttonGroupItemVariants = tv({
 
 export type ButtonGroupVariantProps = VariantProps<typeof buttonGroupVariants>;
 
-export type ButtonGroupRootProps = WithRef<HTMLDivElement> & {
+export type ButtonGroupRootProps = Omit<WithRef<HTMLDivElement>, "children"> & {
   variant?: ButtonGroupVariantProps["variant"];
   color?: ButtonGroupVariantProps["color"];
   radius?: ButtonGroupVariantProps["radius"];
   direction?: ButtonGroupVariantProps["direction"];
+  children?: Snippet<
+    [
+      {
+        variant?: ButtonGroupVariantProps["variant"];
+        color?: ButtonGroupVariantProps["color"];
+        radius?: ButtonGroupVariantProps["radius"];
+        direction?: ButtonGroupVariantProps["direction"];
+      },
+    ]
+  >;
 };
 
 export type ButtonGroupItemVariantProps = VariantProps<

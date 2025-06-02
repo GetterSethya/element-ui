@@ -48,7 +48,12 @@
         }}
         <ContentRenderer content={LoadingComponent} />
     {/if}
-    {@render children?.()}
+    {@render children?.({
+        variant,
+        size,
+        radius,
+        color,
+    })}
     {#if isLoading && loadingSide === "end"}
         {@const LoadingComponent = loadingComponent ?? {
             component: LoadingIndicator.Circular,

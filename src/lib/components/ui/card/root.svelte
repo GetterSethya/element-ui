@@ -25,5 +25,5 @@
     bind:this={ref}
     {...rest}
 >
-    {@render children?.()}
+    {@render children?.({ border, radius, variant })}
 </div>

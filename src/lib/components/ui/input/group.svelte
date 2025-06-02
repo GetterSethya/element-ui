@@ -28,6 +28,9 @@
     {...rest}
 >
     <ContentRenderer content={startContent} />
-    {@render children?.()}
+    {@render children?.({
+        invalid,
+        radius,
+    })}
     <ContentRenderer content={endContent} />
 </div>

@@ -47,5 +47,5 @@
     )}
     {...rest}
 >
-    {@render children?.()}
+    {@render children?.({ color, direction, radius, variant })}
 </div>

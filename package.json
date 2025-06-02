@@ -28,6 +28,7 @@
     "mode-watcher": "^1.0.7",
     "runed": "^0.27.0",
     "tailwind-merge": "^3.3.0",
-    "tailwind-variants": "^1.0.0"
+    "tailwind-variants": "^1.0.0",
+    "@tanstack/svelte-form": "^1.12.0"
   }
 }

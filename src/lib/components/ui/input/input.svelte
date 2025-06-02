@@ -4,7 +4,6 @@
 
     let {
         class: className,
-        children,
         radius,
         invalid,
         variant,

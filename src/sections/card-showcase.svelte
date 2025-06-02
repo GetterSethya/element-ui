@@ -3,8 +3,16 @@
     import Button from "@/lib/components/ui/button/button.svelte";
     import Label from "@/lib/components/ui/label/label.svelte";
     import { Input, InputGroup } from "@/lib/components/ui/input";
-    import { EyeOffIcon, LockIcon, MailIcon, UserIcon } from "@lucide/svelte";
+    import {
+        EyeIcon,
+        EyeOffIcon,
+        LockIcon,
+        MailIcon,
+        UserIcon,
+    } from "@lucide/svelte";
     import { ICON_SIZE } from "@/lib/shared/constants";
+    import * as Form from "@ui/form/";
+    import FormExample from "./form-example.svelte";
 </script>
 
 <div class="flex px-20 flex-col gap-10">
@@ -176,113 +184,6 @@
     </div>
 
     {#snippet card(args: Card.RootProps)}
-        {@const uuid = crypto.randomUUID()}
-        <Card.Root {...args}>
-            <Card.Header>
-                <Card.Title>Create Your Account</Card.Title>
-                <Card.Description>
-                    Please fill the form bellow to continue
-                </Card.Description>
-            </Card.Header>
-            <Card.Body>
-                <div class="flex flex-col gap-1">
-                    <Label aria-required for={`username-${uuid}`}>
-                        Username
-                    </Label>
-                    <InputGroup
-                        startContent={{
-                            component: UserIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        radius={args.radius}
-                    >
-                        <Input
-                            id={`username-${uuid}`}
-                            name="username"
-                            type="text"
-                            placeholder="Input your username"
-                            variant="borderless"
-                        />
-                    </InputGroup>
-                </div>
-                <div class="flex flex-col gap-1">
-                    <Label aria-required for={`email-${uuid}`}>Email</Label>
-                    <InputGroup
-                        startContent={{
-                            component: MailIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        radius={args.radius}
-                    >
-                        <Input
-                            id={`email-${uuid}`}
-                            name="email"
-                            placeholder="Input your email"
-                            type="email"
-                            variant="borderless"
-                        />
-                    </InputGroup>
-                </div>
-                <div class="flex flex-col gap-1">
-                    <Label aria-required for={`password-${uuid}`}
-                        >Password</Label
-                    >
-                    <InputGroup
-                        startContent={{
-                            component: LockIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        endContent={{
-                            component: EyeOffIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        radius={args.radius}
-                    >
-                        <Input
-                            id={`password-${uuid}`}
-                            name="password"
-                            type="password"
-                            placeholder="********"
-                            variant="borderless"
-                        />
-                    </InputGroup>
-                </div>
-                <div class="flex flex-col gap-1">
-                    <Label aria-required for={`passwordConfirm-${uuid}`}
-                        >Confirm Password</Label
-                    >
-                    <InputGroup
-                        startContent={{
-                            component: LockIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        endContent={{
-                            component: EyeOffIcon,
-                            props: { size: ICON_SIZE, class: "text-outline" },
-                        }}
-                        radius={args.radius}
-                    >
-                        <Input
-                            id={`passwordConfirm-${uuid}`}
-                            name="passwordConfirm"
-                            type="password"
-                            placeholder="********"
-                            variant="borderless"
-                        />
-                    </InputGroup>
-                </div>
-            </Card.Body>
-            <Card.Footer>
-                <Button
-                    class="w-full"
-                    color={args.variant === "surface"
-                        ? "primary"
-                        : args.variant}
-                    radius={args.radius}
-                >
-                    Continue
-                </Button>
-            </Card.Footer>
-        </Card.Root>
+        <FormExample {...args} />
     {/snippet}
 </div>

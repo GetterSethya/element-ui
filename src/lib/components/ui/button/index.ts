@@ -1,4 +1,4 @@
-import { Button as ButtonPrimitive } from "bits-ui";
+import { Button as ButtonPrimitive, type WithoutChildren } from "bits-ui";
 import { tv, type VariantProps } from "tailwind-variants";
 import Variant from "./variant";
 import type { Component, Snippet } from "svelte";
@@ -164,7 +164,7 @@ export type ButtonProps<
   StartContent extends Component,
   EndContent extends Component,
   LoadingComponent extends Component,
-> = ButtonPrimitive.RootProps & {
+> = WithoutChildren<ButtonPrimitive.RootProps> & {
   loadingSide?: "start" | "end";
   loadingComponent?: Snippet | TypedComponent<LoadingComponent>;
   startContent?: Snippet | TypedComponent<StartContent>;
@@ -174,6 +174,17 @@ export type ButtonProps<
   color?: ButtonVariantProps["color"];
   size?: ButtonVariantProps["size"];
   radius?: ButtonVariantProps["radius"];
+  children?: Snippet<
+    [
+      {
+        isLoading?: boolean;
+        variant?: ButtonVariantProps["variant"];
+        color?: ButtonVariantProps["color"];
+        size?: ButtonVariantProps["size"];
+        radius?: ButtonVariantProps["radius"];
+      },
+    ]
+  >;
 };
 
 export type ButtonVariantProps = VariantProps<typeof buttonVariants>;

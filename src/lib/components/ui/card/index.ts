@@ -6,6 +6,7 @@ import Footer from "./footer.svelte";
 import Root from "./root.svelte";
 import { tv, type VariantProps as VP } from "tailwind-variants";
 import type { WithRef } from "@/lib/shared/types";
+import type { Snippet } from "svelte";
 
 const cardVariants = tv({
   base: "w-full",
@@ -43,7 +44,16 @@ const cardVariants = tv({
 });
 
 type VariantProps = VP<typeof cardVariants>;
-type RootProps = WithRef<HTMLDivElement> & {
+type RootProps = Omit<WithRef<HTMLDivElement>, "children"> & {
+  children?: Snippet<
+    [
+      {
+        variant?: VariantProps["variant"];
+        border?: VariantProps["border"];
+        radius?: VariantProps["radius"];
+      },
+    ]
+  >;
   variant?: VariantProps["variant"];
   border?: VariantProps["border"];
   radius?: VariantProps["radius"];

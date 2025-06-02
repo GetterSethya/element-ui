@@ -1,7 +1,10 @@
 import type { TypedComponent, WithRef } from "@/lib/shared/types";
 import { tv } from "tailwind-variants";
 import { type VariantProps as VP } from "tailwind-variants";
-import type { HTMLInputTypeAttribute } from "svelte/elements";
+import type {
+  HTMLInputAttributes,
+  HTMLInputTypeAttribute,
+} from "svelte/elements";
 import Input from "./input.svelte";
 import Group from "./group.svelte";
 import type { Component, Snippet } from "svelte";
@@ -98,8 +101,8 @@ const groupVariants = tv({
 });
 
 type InputVariantProps = VP<typeof inputVariants>;
-type InputProps = WithRef<HTMLInputElement> & {
-  name?: string;
+type InputProps = Omit<HTMLInputAttributes, "children"> & {
+  ref?: HTMLInputElement;
   type?: HTMLInputTypeAttribute;
   radius?: InputVariantProps["radius"];
   variant?: InputVariantProps["variant"];
@@ -110,11 +113,19 @@ type GroupVariantProps = VP<typeof groupVariants>;
 type GroupProps<
   StartContent extends Component,
   EndContent extends Component,
-> = WithRef<HTMLDivElement> & {
+> = Omit<WithRef<HTMLDivElement>, "children"> & {
   startContent?: Snippet<[]> | TypedComponent<StartContent>;
   endContent?: Snippet<[]> | TypedComponent<EndContent>;
   radius?: GroupVariantProps["radius"];
   invalid?: boolean;
+  children?: Snippet<
+    [
+      {
+        radius?: GroupVariantProps["radius"];
+        invalid?: boolean;
+      },
+    ]
+  >;
 };
 
 export {
