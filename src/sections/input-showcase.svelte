@@ -28,7 +28,7 @@
             <InputGroup
                 startContent={{
                     component: UserIcon,
-                    props: { size: ICON_SIZE, class: "text-outline/50" },
+                    props: { size: ICON_SIZE, class: "text-outline/70" },
                 }}
             >
                 <Input variant="borderless" placeholder="Username" />
@@ -40,7 +40,7 @@
             <InputGroup
                 endContent={{
                     component: SearchIcon,
-                    props: { size: ICON_SIZE, class: "text-outline/50" },
+                    props: { size: ICON_SIZE, class: "text-outline/70" },
                 }}
             >
                 <Input variant="borderless" placeholder="Search..." />
@@ -52,11 +52,11 @@
             <InputGroup
                 startContent={{
                     component: SearchIcon,
-                    props: { size: ICON_SIZE, class: "text-outline/50" },
+                    props: { size: ICON_SIZE, class: "text-outline/70" },
                 }}
                 endContent={{
                     component: CheckIcon,
-                    props: { size: ICON_SIZE, class: "text-outline/50" },
+                    props: { size: ICON_SIZE, class: "text-outline/70" },
                 }}
             >
                 <Input variant="borderless" placeholder="Find user" />

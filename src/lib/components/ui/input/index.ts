@@ -14,7 +14,7 @@ const inputVariants = tv({
   variants: {
     variant: {
       styled:
-        "border border-outline/20 px-3 py-2 focus-visible:outline-2 focus-visible:border-primary focus-visible:outline-primary text-sm",
+        "border border-outline/70 dark:border-outline/20 px-3 py-2 focus-visible:outline-2 focus-visible:border-primary focus-visible:outline-primary text-sm",
       borderless:
         "focus-visible:outline-none text-sm group-focus-visible:bg-red-500",
     },
@@ -82,7 +82,7 @@ const inputVariants = tv({
 });
 
 const groupVariants = tv({
-  base: "w-full inline-flex gap-2 border border-outline/20 px-3 py-2 focus-within:outline-2 focus-within:border-primary focus-within:outline-primary text-sm",
+  base: "w-full inline-flex gap-2 border border-outline/70 dark:border-outline/20 px-3 py-2 focus-within:outline-2 focus-within:border-primary focus-within:outline-primary text-sm",
   variants: {
     radius: {
       none: "rounded-none",
