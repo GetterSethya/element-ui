@@ -42,6 +42,10 @@
             name: "Alert",
             href: "alert",
         },
+        {
+            name: "Badge",
+            href: "badge",
+        },
     ];
 
     function handleChangeMode() {

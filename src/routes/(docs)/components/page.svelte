@@ -12,6 +12,7 @@
     import InputShowcase from "@/sections/input-showcase.svelte";
     import LabelShowcase from "@/sections/label-showcase.svelte";
     import AlertShowcase from "@/sections/alert-showcase.svelte";
+    import BadgeShowcase from "@/sections/badge-showcase.svelte";
 
     let { componentName }: ComponentDocsPageProps = $props();
 </script>
@@ -42,4 +43,8 @@
 
 {#if componentName === "alert"}
     <AlertShowcase />
+{/if}
+
+{#if componentName === "badge"}
+    <BadgeShowcase />
 {/if}
