@@ -38,6 +38,10 @@
             name: "Label",
             href: "label",
         },
+        {
+            name: "Alert",
+            href: "alert",
+        },
     ];
 
     function handleChangeMode() {
