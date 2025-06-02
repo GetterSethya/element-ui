@@ -74,6 +74,7 @@
                 e.stopPropagation();
                 form.handleSubmit();
             }}
+            id={`example-form-${uuid}`}
         >
             <Card.Body>
                 <div class="flex flex-col gap-1">
@@ -289,23 +290,24 @@
                     </form.Field>
                 </div>
             </Card.Body>
-            <Card.Footer>
-                <form.Subscribe>
-                    {#snippet children(props)}
-                        <Button
-                            disabled={!props.canSubmit}
-                            isLoading={props.isSubmitting}
-                            class="w-full"
-                            color={cardProps.variant === "surface"
-                                ? "primary"
-                                : cardProps.variant}
-                            radius={cardProps.radius}
-                        >
-                            Continue
-                        </Button>
-                    {/snippet}
-                </form.Subscribe>
-            </Card.Footer>
         </form>
+        <Card.Footer>
+            <form.Subscribe>
+                {#snippet children(props)}
+                    <Button
+                        form={`example-form-${uuid}`}
+                        disabled={!props.canSubmit}
+                        isLoading={props.isSubmitting}
+                        class="w-full"
+                        color={cardProps.variant === "surface"
+                            ? "primary"
+                            : cardProps.variant}
+                        radius={cardProps.radius}
+                    >
+                        Continue
+                    </Button>
+                {/snippet}
+            </form.Subscribe>
+        </Card.Footer>
     {/snippet}
 </Card.Root>
