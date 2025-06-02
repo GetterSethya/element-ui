@@ -15,9 +15,9 @@
     class={cn(
         inputVariants({
             radius,
-            variant
+            variant,
         }),
-        invalid && "border-error",
+        invalid && "border-error placeholder-error/50",
         className,
     )}
     {...rest}

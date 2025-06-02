@@ -1,17 +1,5 @@
 <script lang="ts">
     import * as Card from "@ui/card/";
-    import Button from "@/lib/components/ui/button/button.svelte";
-    import Label from "@/lib/components/ui/label/label.svelte";
-    import { Input, InputGroup } from "@/lib/components/ui/input";
-    import {
-        EyeIcon,
-        EyeOffIcon,
-        LockIcon,
-        MailIcon,
-        UserIcon,
-    } from "@lucide/svelte";
-    import { ICON_SIZE } from "@/lib/shared/constants";
-    import * as Form from "@ui/form/";
     import FormExample from "./form-example.svelte";
 </script>
 

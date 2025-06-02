@@ -30,6 +30,14 @@
             name: "Card",
             href: "card",
         },
+        {
+            name: "Input",
+            href: "input",
+        },
+        {
+            name: "Label",
+            href: "label",
+        },
     ];
 
     function handleChangeMode() {
@@ -68,19 +76,19 @@
         class="flex flex-1 flex-row border-e border-outline/20 w-full lg:max-w-[80%] max-h-[93.7vh] mx-auto"
     >
         <div
-            class="border-x border-outline/20 bg-surface-variant/10 py-6 min-w-[350px] flex-shrink-0 overflow-y-auto"
+            class="border-x border-outline/20 bg-surface-variant/10 py-6 min-w-[100px] lg:min-w-[350px] flex-shrink-0 overflow-y-auto"
         >
             <div class="flex flex-col gap-2">
                 {#each sidebarDocsData as s}
                     <Link
                         class={cn(
-                            "w-[80%] line-clamp-1 text-sm mx-auto px-2.5 py-2 hover:bg-primary hover:text-on-primary transition-all ease-in-out font-medium rounded-lg",
+                            "w-[80%] text-sm mx-auto px-2.5 h-fit py-2 hover:bg-primary hover:text-on-primary transition-all ease-in-out font-medium rounded-lg",
                             location.url.pathname === `/docs/${s.href}` &&
                                 "bg-primary text-on-primary",
                         )}
                         href={`/docs/${s.href}`}
                     >
-                        {s.name}
+                        <span class="line-clamp-1">{s.name}</span>
                     </Link>
                 {/each}
             </div>

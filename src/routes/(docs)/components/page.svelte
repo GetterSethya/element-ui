@@ -9,6 +9,8 @@
     import ButtonShowcase from "@/sections/button-showcase.svelte";
     import LoadingIndicatorShowcase from "@/sections/loading-indicator-showcase.svelte";
     import CardShowcase from "@/sections/card-showcase.svelte";
+    import InputShowcase from "@/sections/input-showcase.svelte";
+    import LabelShowcase from "@/sections/label-showcase.svelte";
 
     let { componentName }: ComponentDocsPageProps = $props();
 </script>
@@ -27,4 +29,12 @@
 
 {#if componentName === "card"}
     <CardShowcase />
+{/if}
+
+{#if componentName === "input"}
+    <InputShowcase />
+{/if}
+
+{#if componentName === "label"}
+    <LabelShowcase />
 {/if}

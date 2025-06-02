@@ -23,7 +23,7 @@
         groupVariants({
             radius: radius,
         }),
-        invalid && "border-error text-error",
+        invalid && "border-error text-error [&>_input::placeholder]:text-error/50",
     )}
     {...rest}
 >
