@@ -31,4 +31,4 @@ type BadgeProps = WithRef<HTMLDivElement> & {
   color?: VariantProps["color"];
 };
 
-export { Badge, badgeVariants, type BadgeProps };
+export { Badge, badgeVariants, type BadgeProps, type VariantProps };

@@ -1,82 +1,45 @@
 <script lang="ts">
-    import LoadingIndicator from "@ui/loading-indicator/";
+    import LoadingIndicator, {
+        type SpinnerProps,
+    } from "@ui/loading-indicator/";
+
+    type Size = SpinnerProps["size"];
+    type Color = SpinnerProps["color"];
+
+    const indicators = [
+        { name: "Circular", component: LoadingIndicator.Circular },
+        { name: "Fan", component: LoadingIndicator.Fan },
+        { name: "Dot", component: LoadingIndicator.Dot },
+        { name: "dot wave", component: LoadingIndicator.DotWave },
+    ];
+
+    const sizes: Size[] = ["sm", "md", "lg", "xl", "xxl"];
+    const colors: Color[] = [
+        "default",
+        "primary",
+        "secondary",
+        "tertiary",
+        "error",
+    ];
 </script>
 
-<div class="flex px-20 flex-col gap-10">
-    <div class="flex flex-col gap-2.5">
-        <span>Circular</span>
+<div class="flex flex-col gap-10 px-20">
+    {#each indicators as indicator}
         <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Circular size="sm" />
-                <LoadingIndicator.Circular size="md" />
-                <LoadingIndicator.Circular size="lg" />
-                <LoadingIndicator.Circular size="xl" />
-                <LoadingIndicator.Circular size="xxl" />
-            </div>
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Circular color="default" />
-                <LoadingIndicator.Circular color="primary" />
-                <LoadingIndicator.Circular color="secondary" />
-                <LoadingIndicator.Circular color="tertiary" />
-                <LoadingIndicator.Circular color="error" />
+            <span>{indicator.name}</span>
+            <div class="flex flex-col gap-2.5">
+                <div class="flex items-center gap-2.5">
+                    {#each sizes as size}
+                        <svelte:component this={indicator.component} {size} />
+                    {/each}
+                </div>
+                <div class="flex items-center gap-2.5">
+                    {#each colors as color}
+                        <svelte:component this={indicator.component} {color} />
+                    {/each}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex flex-col gap-2.5">
-        <span>Fan</span>
-        <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Fan size="sm" />
-                <LoadingIndicator.Fan size="md" />
-                <LoadingIndicator.Fan size="lg" />
-                <LoadingIndicator.Fan size="xl" />
-                <LoadingIndicator.Fan size="xxl" />
-            </div>
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Fan color="default" />
-                <LoadingIndicator.Fan color="primary" />
-                <LoadingIndicator.Fan color="secondary" />
-                <LoadingIndicator.Fan color="tertiary" />
-                <LoadingIndicator.Fan color="error" />
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col gap-2.5">
-        <span>Dot</span>
-        <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Dot size="sm" />
-                <LoadingIndicator.Dot size="md" />
-                <LoadingIndicator.Dot size="lg" />
-                <LoadingIndicator.Dot size="xl" />
-                <LoadingIndicator.Dot size="xxl" />
-            </div>
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.Dot color="default" />
-                <LoadingIndicator.Dot color="primary" />
-                <LoadingIndicator.Dot color="secondary" />
-                <LoadingIndicator.Dot color="tertiary" />
-                <LoadingIndicator.Dot color="error" />
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col gap-2.5">
-        <span>dot wave</span>
-        <div class="flex flex-col gap-2.5">
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.DotWave size="sm" />
-                <LoadingIndicator.DotWave size="md" />
-                <LoadingIndicator.DotWave size="lg" />
-                <LoadingIndicator.DotWave size="xl" />
-                <LoadingIndicator.DotWave size="xxl" />
-            </div>
-            <div class="flex items-center gap-2.5">
-                <LoadingIndicator.DotWave color="default" />
-                <LoadingIndicator.DotWave color="primary" />
-                <LoadingIndicator.DotWave color="secondary" />
-                <LoadingIndicator.DotWave color="tertiary" />
-                <LoadingIndicator.DotWave color="error" />
-            </div>
-        </div>
-    </div>
+    {/each}
 </div>
+

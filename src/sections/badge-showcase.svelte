@@ -1,45 +1,40 @@
 <script lang="ts">
     import Badge from "@/lib/components/ui/badge/badge.svelte";
+    import type { VariantProps } from "@/lib/components/ui/badge/";
+
+    type Size = VariantProps["size"];
+    type Color = VariantProps["color"];
+
+    const sizes: { name: string; value: Size }[] = [
+        { name: "indicator", value: "indicator" },
+        { name: "sm", value: "sm" },
+        { name: "md", value: "md" },
+        { name: "lg", value: "lg" },
+    ];
+
+    const colors: Color[] = ["primary", "secondary", "tertiary"];
 </script>
 
-<div class="flex px-20 flex-col gap-10 w-1/2">
-    <div class="flex flex-col gap-2.5">
-        <span>Indicator</span>
+<div class="flex w-1/2 flex-col gap-10 px-20">
+    {#each sizes as size}
         <div class="flex flex-col gap-2.5">
-            <Badge size="indicator" />
-            <Badge color="primary" size="indicator" />
-            <Badge color="secondary" size="indicator" />
-            <Badge color="tertiary" size="indicator" />
+            <span>{size.name}</span>
+            <div class="flex flex-col gap-2.5">
+                {#if size.value === "indicator"}
+                    <Badge size="indicator" />
+                    {#each colors as color}
+                        <Badge {color} size="indicator" />
+                    {/each}
+                {:else}
+                    <Badge size={size.value}>1</Badge>
+                    <Badge size={size.value}>999+</Badge>
+
+                    {#each colors as color}
+                        <Badge {color} size={size.value}>999+</Badge>
+                    {/each}
+                {/if}
+            </div>
         </div>
-
-        <span>sm</span>
-        <div class="flex flex-col gap-2.5">
-            <Badge size="sm">1</Badge>
-            <Badge size="sm">999+</Badge>
-
-            <Badge color="primary" size="sm">999+</Badge>
-            <Badge color="secondary" size="sm">999+</Badge>
-            <Badge color="tertiary" size="sm">999+</Badge>
-        </div>
-
-        <span>md</span>
-        <div class="flex flex-col gap-2.5">
-            <Badge size="md">1</Badge>
-            <Badge size="md">999+</Badge>
-
-            <Badge color="primary" size="md">999+</Badge>
-            <Badge color="secondary" size="md">999+</Badge>
-            <Badge color="tertiary" size="md">999+</Badge>
-        </div>
-
-        <span>lg</span>
-        <div class="flex flex-col gap-2.5">
-            <Badge size="lg">1</Badge>
-            <Badge size="lg">999+</Badge>
-
-            <Badge color="primary" size="lg">999+</Badge>
-            <Badge color="secondary" size="lg">999+</Badge>
-            <Badge color="tertiary" size="lg">999+</Badge>
-        </div>
-    </div>
+    {/each}
 </div>
+
