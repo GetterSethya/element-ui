@@ -46,6 +46,10 @@
             name: "Badge",
             href: "badge",
         },
+        {
+            name: "Tooltip",
+            href: "tooltip",
+        },
     ];
 
     function handleChangeMode() {
@@ -64,7 +68,7 @@
         class="z-10 flex flex-row px-10 sticky top-0 py-2.5 border-b bg-surface-variant/10 items-center justify-between border-x border-outline/20 w-full lg:max-w-[80%] mx-auto"
     >
         <div>
-            <span class="text-lg font-bold">Element UI</span>
+            <span class="text-lg font-bold">Untitled</span>
         </div>
         <div>
             <Button size="icon" variant="text">

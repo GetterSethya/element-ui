@@ -13,6 +13,7 @@
     import LabelShowcase from "@/sections/label-showcase.svelte";
     import AlertShowcase from "@/sections/alert-showcase.svelte";
     import BadgeShowcase from "@/sections/badge-showcase.svelte";
+    import TooltipShowcase from "@/sections/tooltip-showcase.svelte";
 
     let { componentName }: ComponentDocsPageProps = $props();
 </script>
@@ -47,4 +48,8 @@
 
 {#if componentName === "badge"}
     <BadgeShowcase />
+{/if}
+
+{#if componentName === "tooltip"}
+    <TooltipShowcase />
 {/if}
